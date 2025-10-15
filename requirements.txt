@@ -1,0 +1,21 @@
+# Cylix Mock Prototype - Python dependencies
+
+# Standard library only, no external packages strictly required
+# Optional/future-use packages:
+
+# JSON handling (optional, standard library json is enough)
+json5
+
+# Pretty printing tables or logs (optional)
+tabulate
+
+# Progress bars for CLI (optional)
+tqdm
+
+# YAML support if you later extend configs (optional)
+pyyaml
+
+# Colored terminal output (optional)
+colorama
+
+# CSV handling (optional, standard library csv is enough)
