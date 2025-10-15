@@ -1,4 +1,4 @@
-# Cylix Mock Prototype
+# Cylix Prototype
 
 **Cylix Mock Prototype** is a safe, non-destructive Python-based demonstration of a system hardening tool workflow. It simulates security scanning, vulnerability detection, configuration backup, hardening, rollback, and reporting on both Linux and Windows systems without touching actual system files or requiring admin privileges.
 
@@ -24,3 +24,43 @@
 
 ```bash
 pip install -r requirements.txt
+```
+Usage
+Linux
+```
+chmod +x cylix_mock_linux.py
+./cylix_mock_linux.py <action>
+```
+Windows
+```
+python cylix_mock_windows.py <action>
+```
+---
+### Available Actions
+
+| Action    | Description                                                   |
+|-----------|---------------------------------------------------------------|
+| `scan`    | Perform a baseline system scan (mock)                        |
+| `detect`  | Detect vulnerabilities (mock)                                 |
+| `backup`  | Create a mock backup of configs/registry                     |
+| `harden`  | Simulate applying hardening actions                           |
+| `rollback`| Simulate rollback to last backup                               |
+| `report`  | Generate JSON and CSV reports                                  |
+| `full`    | Run all steps sequentially (scan → detect → backup → harden → report) |
+
+---
+All outputs are stored in safe, local workspace directories:
+
+Linux: ~/.cylix_mock_linux/
+
+Windows: C:\Users\<username>\CylixMock_windows\
+
+# Inside the workspace:
+
+baseline_*.json – mock system snapshots
+
+backups/ – mock backups
+
+changes_*.json – simulated hardening actions
+
+reports/ – JSON and CSV reports
